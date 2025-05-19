@@ -1,6 +1,6 @@
 /**
  * @swagger
- * /users:
+ * /api/users:
  *   post:
  *     summary: Create a new user
  *     requestBody:
@@ -26,7 +26,7 @@
 
 /**
  * @swagger
- * /posts:
+ * /api/posts:
  *   post:
  *     summary: Create a new post
  *     requestBody:

@@ -1,9 +1,10 @@
 const { Sequelize, DataTypes } = require('sequelize');
-const { RelationshipType } = require('sequelize/lib/errors/database/foreign-key-constraint-error');
+
+// File-based SQLite database (persistent)
 const sequelize = new Sequelize({
   dialect: 'sqlite',
-  storage: './database.sqlite',
-}); // Using SQLite for simplicity
+  storage: './db/forum.sqlite', // ✅ Persistent file path
+});
 
 // Define the User model
 const User = sequelize.define('User', {
