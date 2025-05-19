@@ -1,19 +1,11 @@
 const express = require('express');
 const router = express.Router();
+const postController = require('../controllers/postController');
 
-const { Post} = require('./../models');
-// const postController = require('../controllers/postController');
-
-
-
-router.post('/', async (req, res) => {
-  const post = await Post.create({title: req.body.title, content: req.body.content, userId: req.body.userId});
-  res.json(post);
-});
-
-router.get('/', async (req, res) => {
-  const posts = await Post.findAll();
-  res.json(posts);
-});
+router.post('/', postController.createPost);
+router.get('/', postController.getPosts);
+router.get('/:id', postController.getPostById);
+router.put('/:id', postController.updatePost);
+router.delete('/:id', postController.deletePost);
 
 module.exports = router;

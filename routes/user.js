@@ -1,19 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const { User} = require('./../models');
-// const userController = require('../controllers/userController');
+const userController = require('../controllers/userController');
 
-
-
-router.post('/', async (req, res) => {
-  const user = await User.create({name: req.body.name, email: req.body.email});
-  res.json(user);
-});
-
-router.get('/', async (req, res) => {
-  const users = await User.findAll();
-  res.json(users);
-});
-
+router.post('/', userController.createUser);
+router.get('/', userController.getUsers);
+router.get('/:id', userController.getUserById);
+router.put('/:id', userController.updateUser);
+router.get('/:id', userController.deleteUser);
 
 module.exports = router;
