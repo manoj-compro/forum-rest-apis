@@ -3,12 +3,15 @@ const cors = require('cors');
 
 const swaggerUi = require('swagger-ui-express');
 const swaggerJsDoc = require('swagger-jsdoc');
-const { sequelize, User, Post } = require('./models');
+const { sequelize } = require('./models');
+
+const routes = require('./routes');
 
 
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use('/api', routes);
 
 const swaggerOptions = {
   swaggerDefinition: {
@@ -24,7 +27,7 @@ const swaggerOptions = {
       },
     ],
   },
-  apis: ['./index.js', './swaggerDocs.js']
+  apis: ['./app.js', './swaggerDocs.js']
 };
 
 
@@ -33,31 +36,10 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 
 
-sequelize.sync({ force: true }).then(() => {
-  console.log('Database & tables created!');
-});
+// sequelize.sync({ force: true }).then(() => {
+//   console.log('Database & tables created!');
+// });
 
 
-app.post('/users', async (req, res) => {
-  const user = await User.create({name: req.body.name, email: req.body.email});
-  res.json(user);
-});
-app.get('/users', async (req, res) => {
-  const users = await User.findAll();
-  res.json(users);
-});
 
-app.post('/posts', async (req, res) => {
-  const post = await Post.create({title: req.body.title, content: req.body.content, userId: req.body.userId});
-  res.json(post);
-});
-
-app.get('/posts', async (req, res) => {
-  const posts = await Post.findAll();
-  res.json(posts);
-});
-
-app.listen(3000, () => {
-  console.log('Server is running on port 3000');
-  console.log('http://localhost:3000');
-})
+module.exports = app;
