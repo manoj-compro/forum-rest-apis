@@ -1,16 +1,15 @@
-const { Post } = require('../models');
+const { Post, User, Thread } = require('../models');
 const userController = require('./userController');
-const threadController = require('./threadController');
 
 
 const createPost = async (req, res) => {
   const { userId, threadId, content} = req.body;
   try {
-    const user = await userController.getUserById(userId);
+    const user = await User.findByPk(userId);
     if (!user) {
       return res.status(404).json({ error: 'User not found' });
     }
-    const thread = await threadController.getThreadById(threadId);
+    const thread = await Thread.findByPk(threadId);
     if (!thread) {
       return res.status(404).json({ error: 'Thread not found' });
     }
@@ -48,11 +47,11 @@ const getPosts = async (req, res) => {
   const updatePost = async (req, res) => {
     const { userId, threadId, content } = req.body;
     try {
-      const user = await userController.getUserById(userId);
+      const user = await User.findByPk(userId);
       if (!user) {
         return res.status(404).json({ error: 'User not found' });
       }
-      const thread = await threadController.getThreadById(threadId);
+      const thread = await Thread.findByPk(threadId);
       if (!thread) {
         return res.status(404).json({ error: 'Thread not found' });
       }

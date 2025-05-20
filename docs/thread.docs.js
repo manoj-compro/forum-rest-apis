@@ -35,6 +35,8 @@
  *   post:
  *     summary: Create a new thread
  *     tags: [Threads]
+ *     security:
+ *       - bearerAuth: []
  *     requestBody:
  *       required: true
  *       content:

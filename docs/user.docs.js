@@ -17,40 +17,6 @@
  *       example:
  *         name: "John Doe"
  *         email: "john@example.com"
- * 
- *     RegisterUserInput:
- *       type: object
- *       required:
- *         - name
- *         - email
- *       properties:
- *         name:
- *           type: string
- *           description: User's full name
- *         email:
- *           type: string
- *           description: User's unique email address
- *         password:
- *           type: string
- *           description: User's password
- *       example:
- *         name: "John Doe"
- *         email: "john@example.com"
- *         password: "password123"
- * 
- *     LoginUserInput:
- *       type: object
- *       required:
- *         - email
- *         - password
- *       properties:
- *         email:
- *           type: string
- *           example: john@example.com
- *         password:
- *           type: string
- *           format: password
- *           example: securePassword123
  */
 
 /**
@@ -63,23 +29,6 @@
 /**
  * @swagger
  * /api/users:
- *   post:
- *     summary: Create a new user
- *     tags: [Users]
- *     requestBody:
- *       required: true
- *       content:
- *         application/json:
- *           schema:
- *             $ref: '#/components/schemas/RegisterUserInput'
- *     responses:
- *       201:
- *         description: User created successfully
- *         content:
- *           application/json:
- *             schema:
- *               $ref: '#/components/schemas/User'
- *
  *   get:
  *     summary: Get all users
  *     tags: [Users]

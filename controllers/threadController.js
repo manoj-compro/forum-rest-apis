@@ -1,11 +1,10 @@
-const { Thread } = require('../models');
-const userController = require('./userController');
+const { Thread, User } = require('../models');
 
 
 const createThread = async (req, res) => {
   const { title, body, userId } = req.body;
   try {
-    const user = await userController.getUserById(userId);
+    const user = await User.findByPk(userId);
     if (!user) {
       return res.status(404).json({ error: 'User not found' });
     }

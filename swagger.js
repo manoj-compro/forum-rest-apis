@@ -8,6 +8,7 @@ const options = {
     },
     servers: [{ url: 'http://localhost:3000' }],
     tags: [
+      { name: 'Auth', description: 'Auth management' },
       { name: 'Users', description: 'User management' },
       { name: 'Threads', description: 'Thread management' },
       { name: 'Posts', description: 'Post management' },
