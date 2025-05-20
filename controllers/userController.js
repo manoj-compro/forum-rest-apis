@@ -1,18 +1,5 @@
-const bcrypt = require('bcrypt');
 const { User } = require('../models');
 
-
-const createUser = async (req, res) => {
-  const { name, email, password } = req.body;
-  try {
-    const hashed = await bcrypt.hash(password, 10);
-    const user = await User.create({ name, email, password: hashed });
-    res.status(201).json(user);
-  } catch (error) {
-    console.error('Error creating user:', error);
-    res.status(500).json({ error: 'Internal server error' });
-  }
-}
 const getUsers = async (req, res) => {
   try {
     const users = await User.findAll();
@@ -22,6 +9,7 @@ const getUsers = async (req, res) => {
     res.status(500).json({ error: 'Internal server error' });
   }
 }
+
 const getUserById = async (req, res) => {
   try {
     const user = await User.findByPk(req.params.id);
@@ -66,7 +54,6 @@ const deleteUser = async (req, res) => {
 }
 
 module.exports = {
-  createUser,
   getUsers,
   getUserById,
   updateUser,
