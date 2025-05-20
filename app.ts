@@ -21,9 +21,9 @@ app.use('/api', routes);
 const swaggerSpec = swaggerJsDoc(swaggerOptions);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
-sequelize.sync({ force: false }).then(() => {
-  console.log('Database & tables created!');
-});
+// sequelize.sync({ force: false }).then(() => {
+//   console.log('Database & tables created!');
+// });
 
 
 module.exports = app;
