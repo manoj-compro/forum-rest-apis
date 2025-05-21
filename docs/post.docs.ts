@@ -8,17 +8,19 @@
  *         - content
  *       properties:
  *         userId:
- *           type: integer
+ *           type: string
+ *           format: uuid
  *           description: The ID of the user who created the post
  *         threadId:
- *           type: integer
+ *           type: string
+ *           format: uuid
  *           description: The ID of the thread the post belongs to
  *         content:
  *           type: string
  *           description: The content of the post
  *       example:
- *         userId: 1
- *         threadId: 1
+ *         userId: "1"
+ *         threadId: "1"
  *         content: "This is a forum post"
  */
 

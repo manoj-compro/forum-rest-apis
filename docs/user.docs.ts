@@ -54,7 +54,7 @@
  *         name: id
  *         required: true
  *         schema:
- *           type: integer
+ *           type: string
  *         description: ID of the user
  *     responses:
  *       200:
@@ -74,7 +74,7 @@
  *         name: id
  *         required: true
  *         schema:
- *           type: integer
+ *           type: string
  *         description: ID of the user
  *     requestBody:
  *       required: true
@@ -94,7 +94,7 @@
  *         name: id
  *         required: true
  *         schema:
- *           type: integer
+ *           type: string
  *         description: ID of the user
  *     responses:
  *       204:

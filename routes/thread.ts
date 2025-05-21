@@ -1,12 +1,13 @@
-const express = require('express');
+import express from "express";
+import { createThread, getThreads, getThreadById, updateThread, deleteThread } from '../controllers/threadController';
+import auth from '../middlewares/auth';
+
 const router = express.Router();
-const threadController = require('../controllers/threadController');
-const { auth } = require('../middlewares/auth');
 
-router.post('/', auth, threadController.createThread);
-router.get('/', threadController.getThreads);
-router.get('/:id', threadController.getThreadById);
-router.put('/:id', threadController.updateThread);
-router.delete('/:id', threadController.deleteThread);
+router.post('/', auth, createThread);
+router.get('/', getThreads);
+router.get('/:id', getThreadById);
+router.put('/:id', updateThread);
+router.delete('/:id', deleteThread);
 
-module.exports = router;
+export default router;

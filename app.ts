@@ -1,29 +1,25 @@
-const express = require('express');
-const cors = require('cors');
-const passport = require('passport');
+import express from 'express';
+import cors from 'cors';
+import passport from 'passport';
 
-const swaggerUi = require('swagger-ui-express');
-const swaggerJsDoc = require('swagger-jsdoc');
-const swaggerOptions = require('./swagger');
+import swaggerUi from 'swagger-ui-express';
+import swaggerJsDoc from 'swagger-jsdoc';
+import swaggerOptions from './swagger';
 
-const { sequelize } = require('./models');
-const routes = require('./routes');
+import routes from './routes';
+import passportConfig from './configs/passport';
 
 const app = express();
+
 app.use(cors());
 app.use(express.json());
 
 app.use(passport.initialize());
-require('./configs/passport')(passport);
+passportConfig(passport);
 
 app.use('/api', routes);
 
 const swaggerSpec = swaggerJsDoc(swaggerOptions);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
-// sequelize.sync({ force: false }).then(() => {
-//   console.log('Database & tables created!');
-// });
-
-
-module.exports = app;
+export default app;

@@ -28,7 +28,8 @@
  *       type: object
  *       properties:
  *         id:
- *           type: integer
+ *           type: string
+ *           format: uuid
  *           description: User's unique identifier
  *         name:
  *           type: string
@@ -38,7 +39,7 @@
  *           format: email
  *           description: User's unique email address
  *       example:
- *         id: 1
+ *         id: "1"
  *         name: "John Doe"
  *         email: "john@example.com"
  * 
@@ -54,7 +55,6 @@
  *           example: john@example.com
  *         password:
  *           type: string
- *           format: password
  *           example: password123
  * 
  *     LoginUserResponse:
@@ -67,7 +67,8 @@
  *           type: object
  *           properties:
  *             id:
- *               type: integer
+ *               type: string
+ *               format: uuid
  *               description: User's unique identifier
  *             name:
  *               type: string
@@ -79,7 +80,7 @@
  *       example:
  *         token: eyJhbGciOiJIUzI1NiIsInR5cCI6
  *         user:
- *           id: 1
+ *           id: "1"
  *           name: "John Doe"
  *           email: "john@example.com"
  */
