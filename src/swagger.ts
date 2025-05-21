@@ -24,7 +24,7 @@ const options = {
     },
     security: [{ bearerAuth: [] }],
   },
-  apis: ['./docs/*.ts'], // Changed from routes to docs
+  apis: ['src/docs/*.ts'], // Changed from routes to docs
 };
 
 export default options;

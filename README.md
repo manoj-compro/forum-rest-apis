@@ -5,8 +5,7 @@ Rest APIs used to forum dicsussion
 npm install
 
 # Step 2: Generate Prisma Client
-npx prisma generate
+npx prisma generate --schema=./src/prisma/schema.prisma
 
-# Step 2: Push schema to DB (creates dev.db if not present)
-npx prisma db push OR
-npx prisma migrate dev --name init
+# Step 2: Push schema to DB
+npx prisma db push --schema=./src/prisma/schema.prisma

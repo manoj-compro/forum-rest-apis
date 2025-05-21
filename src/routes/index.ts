@@ -1,9 +1,9 @@
 // This file serves as the main entry point for the API routes.
 import express from 'express';
-import authRoutes from './auth';
-import userRoutes from './user'; 
-import threadRoutes from './thread';
-import postRoutes from './post';
+import authRoutes from '~/routes/auth';
+import userRoutes from '~/routes/user'; 
+import threadRoutes from '~/routes/thread';
+import postRoutes from '~/routes/post';
 
 const router = express.Router();
 
