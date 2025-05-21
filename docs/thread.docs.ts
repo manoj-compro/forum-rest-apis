@@ -8,18 +8,19 @@
  *         - title
  *       properties:
  *         userId:
- *           type: integer
+ *           type: string
+ *           format: uuid
  *           description: The ID of the user who created the thread
  *         title:
  *           type: string
  *           description: Title of the thread
- *         body:
+ *         content:
  *           type: string
- *           description: Body/content of the thread
+ *           description: content of the thread
  *       example:
- *         userId: 1
+ *         userId: "1"
  *         title: "How to deploy Node.js on AWS?"
- *         body: "I'm new to AWS and wondering how to deploy my Express app."
+ *         content: "I'm new to AWS and wondering how to deploy my Express app."
  */
 
 /**

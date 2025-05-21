@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "es2019",                    // Modern enough for Node.js 12+
+    "module": "commonjs",                  // Use CommonJS modules (default for Node)
+    "outDir": "./dist",                    // Compiled JS output directory
+    "rootDir": "",                    // Source TS files root folder
+    "strict": true,                        // Enable all strict type checking options
+    "esModuleInterop": true,               // Allow default import syntax for CommonJS modules
+    "allowSyntheticDefaultImports": true, // Support default imports for non-ESM modules
+    "forceConsistentCasingInFileNames": true, // Prevents case-related issues
+    "skipLibCheck": true,                  // Skip checking types of all declaration files (speeds up build)
+    "resolveJsonModule": true,             // Allow import of .json files
+    "noImplicitAny": true,                  // Raise error on implicit any types
+    "noUnusedLocals": true,                 // Warn on unused local variables
+    "noUnusedParameters": true,             // Warn on unused parameters
+    "noFallthroughCasesInSwitch": true,    // Ensure switch statements have breaks or returns
+    "sourceMap": true                      // Generate source maps for debugging
+  },
+  "include": ["**/*.ts"],
+  "exclude": ["node_modules", "dist"]
+}
