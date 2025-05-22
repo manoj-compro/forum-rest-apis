@@ -77,7 +77,7 @@
  *         name: id
  *         required: true
  *         schema:
- *           type: integer
+ *           type: string
  *         description: ID of the thread
  *     responses:
  *       200:
@@ -97,7 +97,7 @@
  *         name: id
  *         required: true
  *         schema:
- *           type: integer
+ *           type: string
  *         description: ID of the thread
  *     requestBody:
  *       required: true
@@ -117,7 +117,7 @@
  *         name: id
  *         required: true
  *         schema:
- *           type: integer
+ *           type: string
  *         description: ID of the thread
  *     responses:
  *       204:

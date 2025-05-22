@@ -1,5 +1,5 @@
-import prisma from '../prisma/client';
 import { Request, Response } from 'express';
+import prisma from '~/prisma/client';
 
 const getUsers = async (_req: Request, res: Response): Promise<void> => {
   try {

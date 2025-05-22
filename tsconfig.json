@@ -3,7 +3,12 @@
     "target": "es2019",                    // Modern enough for Node.js 12+
     "module": "commonjs",                  // Use CommonJS modules (default for Node)
     "outDir": "./dist",                    // Compiled JS output directory
-    "rootDir": "",                    // Source TS files root folder
+    "rootDir": "./src",   
+    "baseUrl": "./src",                    // Source TS files root folder
+    "paths": {
+      "~/*": ["*"],                  // Allows ~ to alias the src directory
+    },
+    "moduleResolution": "node",
     "strict": true,                        // Enable all strict type checking options
     "esModuleInterop": true,               // Allow default import syntax for CommonJS modules
     "allowSyntheticDefaultImports": true, // Support default imports for non-ESM modules
@@ -16,6 +21,6 @@
     "noFallthroughCasesInSwitch": true,    // Ensure switch statements have breaks or returns
     "sourceMap": true                      // Generate source maps for debugging
   },
-  "include": ["**/*.ts"],
+  "include": ["src"],
   "exclude": ["node_modules", "dist"]
 }

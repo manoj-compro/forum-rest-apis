@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import bcrypt from 'bcrypt';
 import jwt, { SignOptions } from 'jsonwebtoken';
 import dotenv from 'dotenv';
-import prisma from '../prisma/client';
+import prisma from '~/prisma/client';
 dotenv.config();
 
 const register = async (req: Request, res: Response): Promise<void> => {

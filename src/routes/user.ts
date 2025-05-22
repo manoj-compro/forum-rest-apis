@@ -4,8 +4,8 @@ import {
   getUserById,
   updateUser,
   deleteUser
-} from '../controllers/userController';
-import auth from '../middlewares/auth';
+} from '~/controllers/userController';
+import auth from '~/middlewares/auth';
 
 const router = express.Router();
 

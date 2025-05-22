@@ -6,8 +6,8 @@ import swaggerUi from 'swagger-ui-express';
 import swaggerJsDoc from 'swagger-jsdoc';
 import swaggerOptions from './swagger';
 
-import routes from './routes';
-import passportConfig from './configs/passport';
+import routes from '~/routes';
+import passportConfig from '~/configs/passport';
 
 const app = express();
 
