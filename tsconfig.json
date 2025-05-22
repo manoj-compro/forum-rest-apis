@@ -8,6 +8,7 @@
     "paths": {
       "~/*": ["*"],                  // Allows ~ to alias the src directory
     },
+    "moduleResolution": "node",
     "strict": true,                        // Enable all strict type checking options
     "esModuleInterop": true,               // Allow default import syntax for CommonJS modules
     "allowSyntheticDefaultImports": true, // Support default imports for non-ESM modules
@@ -20,6 +21,6 @@
     "noFallthroughCasesInSwitch": true,    // Ensure switch statements have breaks or returns
     "sourceMap": true                      // Generate source maps for debugging
   },
-  "include": ["./src/**/*.ts"],
+  "include": ["src"],
   "exclude": ["node_modules", "dist"]
 }

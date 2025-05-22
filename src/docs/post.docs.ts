@@ -78,7 +78,7 @@
  *         name: id
  *         required: true
  *         schema:
- *           type: integer
+ *           type: string
  *         description: ID of the post
  *     responses:
  *       200:
@@ -98,7 +98,7 @@
  *         name: id
  *         required: true
  *         schema:
- *           type: integer
+ *           type: string
  *         description: ID of the post
  *     requestBody:
  *       required: true
@@ -118,7 +118,7 @@
  *         name: id
  *         required: true
  *         schema:
- *           type: integer
+ *           type: string
  *         description: ID of the post
  *     responses:
  *       204:
