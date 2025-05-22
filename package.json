@@ -10,7 +10,7 @@
     "build": "tsc",
     "generate": "prisma generate --schema ./src/prisma/schema.prisma",
     "migrate": "npx prisma db push --schema ./src/prisma/schema.prisma",
-    "postinstall": "prisma generate"
+    "postinstall": "prisma generate --schema=./src/prisma/schema.prisma"
   },
   "keywords": [],
   "author": "",
